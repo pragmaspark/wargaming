@@ -63,7 +63,7 @@ class VCS(Protocol):
 
 class Git(VCS):
     def __init__(self):
-        self.path = Path.home() / "bw"
+        self.__path = vcs_path()
         self.__branch = ""
         self.__refs = ""
         self.__type = "git"
@@ -95,7 +95,7 @@ class Git(VCS):
 
 class SVN(VCS):
     def __init__(self):
-        self.__path = Path.home() / "bw"
+        self.__path = vcs_path()
         self.__branch = ""
         self.__refs = ""
         self.__type = "svn"
@@ -118,6 +118,10 @@ class SVN(VCS):
 
     def type(self):
         return self.__type
+
+
+def vcs_path() -> Path:
+    return Path.home() / "bw"
 
 
 def extract_port(endpoint: str) -> (str, int):
