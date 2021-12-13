@@ -3,6 +3,17 @@ import main
 from pathlib import Path
 
 
+def test_json_load():
+    _json = main.Json(Path(".resource/test.json"))
+    _json.load_json()
+    result = {"hosts": {"EU-CLUSTER": {
+      "title": "Eu cluster discription",
+      "host": "localhost",
+      "user": "user"
+    }}}
+    assert result == _json.content
+
+
 def test_json_transform(mocker):
 
     def mock_vcs(self):
