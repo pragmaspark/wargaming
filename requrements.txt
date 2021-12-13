@@ -1,0 +1,9 @@
+# Script req
+paramiko==2.8.1
+
+# Test req
+docker==5.0.3
+docker-compose==1.29.2
+pytest==6.2.5
+pytest-docker==0.10.3
+pytest-mock==3.6.1

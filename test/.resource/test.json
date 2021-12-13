@@ -1,0 +1,9 @@
+{
+  "hosts": {
+    "EU-CLUSTER": {
+      "title": "Eu cluster discription",
+      "host": "localhost",
+      "user": "user"
+    }
+  }
+}

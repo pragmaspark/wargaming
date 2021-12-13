@@ -1,0 +1,51 @@
+---
+version: '2.4'
+services:
+  openssh-server:
+    image: lscr.io/linuxserver/openssh-server
+    container_name: openssh-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - SUDO_ACCESS=false
+      - PASSWORD_ACCESS=true
+      - USER_PASSWORD=user
+      - USER_NAME=user
+    ports:
+      - 2222:2222
+    restart: unless-stopped
+  openssh-server-python:
+    build:
+      context: .
+      dockerfile: dockerfiles/python.dockerfile
+    image: lscr.io/linuxserver/openssh-server-python
+    container_name: openssh-server-python
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - SUDO_ACCESS=false
+      - PASSWORD_ACCESS=true
+      - USER_PASSWORD=user
+      - USER_NAME=user
+    ports:
+      - 2223:2222
+    restart: unless-stopped
+  openssh-server-python-git:
+    build:
+      context: .
+      dockerfile: dockerfiles/git.dockerfile
+    image: lscr.io/linuxserver/openssh-server-python-git
+    container_name: openssh-server-python-git
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - SUDO_ACCESS=false
+      - PASSWORD_ACCESS=true
+      - USER_PASSWORD=user
+      - USER_NAME=user
+    ports:
+      - 2224:2222
+    restart: unless-stopped

@@ -1,0 +1,14 @@
+{
+    "hosts": {
+        "EU-CLUSTER": {
+            "title": "Eu cluster discription",
+            "host": "eu1-vm-host",
+            "user": "euuser"
+        },
+        "NA-CLUSTER": {
+            "title": "Na cluster description",
+            "host": "na1-vm-host",
+            "user": "nauser"
+        }
+    }
+}

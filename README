@@ -1,0 +1,11 @@
+Task Wargaming Spb
+==================
+
+RUN
+===
+python3 main.py --json inventory.json
+
+TEST
+====
+cd test
+python3 -m pytest
